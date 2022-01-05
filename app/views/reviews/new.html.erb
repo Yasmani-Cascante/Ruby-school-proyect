@@ -1,0 +1,14 @@
+<main>
+  <div class="home__container text-center">
+    <div class="home__wrapper">
+      <h2 class="section-title">New Review</h2>
+      <p>
+        <div class="badge badge-primary text-wrap h-allow-bage text-uppercase" style="width: 5rem;">
+          note
+        </div>
+        Review owners can edit their reviews
+      </p>
+      <%= render(partial: 'form', locals:{review: @review})%>
+    </div>
+  </div>
+</main>

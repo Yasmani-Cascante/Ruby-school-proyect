@@ -1,0 +1,55 @@
+@import 'partials/variables';
+
+.my-nav {
+  height: 50px;
+  .navbar-brand {
+    border-right: 2px solid;
+    padding: 0 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .navbar-nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row !important;
+    .dropdown-menu {
+      border-radius: 0;
+      border: 2px solid #000;
+      border-top: 0;
+    }
+    .nav-link {
+      border-left: 2px solid $black;
+      height: 100%;
+      padding: 0.8rem;
+      font-weight: bold;
+      transition: all .2s;
+      text-transform: capitalize;
+
+        &:hover {
+          background: $primary;
+          color: $white !important;
+        }
+      }  
+  }
+  .nav-search {
+    height: 100%;
+  }
+  .input__field {
+    border-top: 0;
+    border-bottom: 0;
+    transition: all .3s;
+    &:hover,
+    &:focus{
+      border: 1px solid;
+      border-top: 0;
+      border-bottom: 0;
+      background: $white;
+    }
+  }
+  .search-btn {
+    border-top: 0;
+    border-bottom: 0;
+  }
+}

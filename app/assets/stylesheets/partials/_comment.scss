@@ -1,0 +1,28 @@
+@import 'partials/variables';
+
+.comment {
+  display: flex;
+  margin-bottom: 4.8rem;
+  padding-bottom: 1rem;
+  img {
+    margin-right: 1rem;
+  }
+  .comment__header {
+    color: $black;
+    font-weight: bold;
+    font-family: "Netlife-Lining";
+    display: flex;
+    align-items: flex-end;
+    em {
+    font-style: normal;
+    color: #f36b7f;
+    font-size: 0.8em;
+    margin-left: 0.6rem;
+    }
+  }
+  .comment__body {
+    padding: 0.5rem;
+    position: relative;
+  }
+
+}

@@ -1,0 +1,89 @@
+<main>
+  <div class="home__container home__wrapper-underlined">
+
+  <%# ------------- Review Section -------------- %>
+      <div class="home__wrapper">
+        <div class="review">
+        <%# ------- Review Card ----------%>
+          <div class="app__card">
+            <div class="app__card__body">
+              <div class="thumb">
+                <div class="app__card__img">
+                  <%= render(partial: 'review_image', locals: { image_url: @review.image_url }) %>
+                </div>
+                <div class="app__card__subline mr-3">
+                  <div>
+                    <p class="mb-0 text-secondary">Author:</p>
+                    <span> <%= @review.book_author %></span>
+                  </div>
+                  <div>
+                    <p class="mb-0 mt-2 text-secondary">Created on:</p>
+                    <span><%= @review.created_at.strftime("%d %b %y") %></span>
+                  </div>
+                </div>
+              </div>
+              <div class="body">
+                <div class="show-card mb-4">
+                  <div class="goal__owner">
+                    <%= image_tag('avatar', alt: 'Default avatar', src: '/images/avatar.png', class: 'avatar')%>
+                    <p>Created by <span> <%= @created_by.email %> </span></p>
+                  </div>
+                </div>
+                <h1 class="beta"><%= @review.book_title %> </h1>
+                <div class="text-muted mt-1">
+                  <span class="font-weight-bold mb-0">Description: </span>
+                  <%= @review.body %>
+                </div>
+                <% if(@user_logged) %>
+                  <div class="app__card__footer">
+                    <%= render(partial: 'editable_btn', locals: { review: @review}) %>
+                    <%= form_tag(user_bookmarks_path(@user), method: :post, class: 'mr-3' ) do %>
+                      <%= hidden_field_tag(:review_id, @review.id) %>
+                      <%= submit_tag( 'Bookmark', class: 'btn app__btn app__btn-favorite app__btn-shadow', disabled: @disable_bookmark) %>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%# ------------- Discussion Section -------------- %>
+    <div class="home__container">
+      <div class="home__wrapper">
+        <div class="discussion">
+          <h2 class="section-title">Discussion</h2>
+          <%# ------ Discussion Form ------- %>
+          <div class="discussion__form">
+            <% if(@user_logged) %>
+              <%= form_for([@review, @comment]) do |form| %>
+                <div class="form-group">
+                  <%= form.label(:body, 'Add a comment') %>
+                  <%= form.text_area(:body, rows:'3', class: 'form-control') %>
+                </div>
+                <%= form.submit('Post', class: 'btn app__btn app__btn-blue app__btn-shadow text-uppercase') %>
+              <% end %>
+            <% end %>
+          </div>
+          <%# ------------- Comments -------- %>
+          <ul class="discussion_list">
+             <% if(@review.comments.count > 0) %>
+              <% @review.comments.most_recent.each do |comment| %>
+                <li class="comment">
+                  <img class="avatar" src="<%= asset_url("avatar.png") %>" alt="rounded avatar picture">
+                  <div>
+                    <h5 class="comment__header"><%= comment.user.email %><em><%= comment.created_at.strftime("%d %b %y") %></em></h5>
+                    <p class="my-3"><%= comment.body %></p>
+                  </div>
+                </li>
+              <% end %>
+            <% else %>
+            <h3 class="font-weight-bold h-rotate-text"> Sorry, no comments! </h3>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

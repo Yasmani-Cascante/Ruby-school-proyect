@@ -1,0 +1,38 @@
+
+@font-face {
+  font-family: "SansSerifShaded";
+  src: asset-url("SansSerifShaded.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Netlife-Lining";
+  src: asset-url("Netlife-Lining.woff") format("woff");
+
+}
+@font-face {
+  font-family: "trebuc";
+  src: asset-url("trebucbd.ttf") format("truetype");
+}
+
+html {
+  font-family: 'SansSerifShaded' !important;
+  font-size: 16px;
+  line-height:  1.3rem;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  // background-color: #f2eeee99 !important;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1 0 auto;
+  position: relative;
+}
+
+footer {
+  margin-top: auto;
+  border-top: 2px solid; 
+}

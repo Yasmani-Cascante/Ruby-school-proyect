@@ -1,0 +1,16 @@
+.logo {
+  font-weight: bold;
+  height: 100%;
+  a {
+  color: #000 !important;   
+  }
+  em {
+    color: #b1b1b1;
+    margin-left: 0.5rem;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+  }
+  .logo__big {
+  	font-size: 5rem !important;
+  	display: block;
+  }
+}

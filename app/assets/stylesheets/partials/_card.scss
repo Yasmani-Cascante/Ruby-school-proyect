@@ -1,0 +1,115 @@
+@import 'partials/variables';
+
+.app__card {
+  display: flex;
+  background: #f1f1f1;
+  flex-direction: column;
+  height:100%;
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+.app__card__img {
+  float: left;
+  flex: 1 0 auto;
+  position: relative;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+.app__card-title {
+  font-family: trebuc;
+  background: #fff;
+  padding: 0.5rem 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  .card-title {
+    margin: 0 !important; 
+  }
+}
+
+.app__card__body {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 1.5rem 0.5rem 0.5rem;
+  border: 2px solid;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+
+  &-close {
+    border-top: 3px dashed;
+    position: absolute;
+    bottom: 0;
+    background: #f2eeeee8;
+  }
+  .app__card__subline {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    span:first-child {
+      border-bottom: 1px solid;
+    }
+
+    span:last-child {
+      font-family: trebuc;
+      margin-left: auto;
+      font-size: 1.15rem;
+      line-height: 1;
+    }
+
+  }
+}
+
+.app__card__footer {
+    display: flex;
+    margin-top: 1.3rem;
+    .btn:first-child {
+      flex: 1 1 auto;
+      background: $blue;
+      color: $white !important;
+    }
+}
+
+.show-card {
+  .goal__owner {
+    display: flex;
+    align-items:flex-end;
+
+    .avatar {
+        float: left;
+        width: 50px;
+        height: 50px;
+        margin-right: .5em;
+    }
+  }
+  
+.avatar-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-transform: none;
+    margin-bottom: 1.6rem;
+    .avatar {
+      position: relative;
+      width: 42px;
+      height: 42px;
+      background: #afbac4;
+      border-radius: 50%;
+      margin-right: 1.6rem;
+      display: block;
+      }
+      .avatar-header__text {
+         font-size: 1.5rem;
+        text-transform: none;
+        margin: 0;
+        color: #afbac4; 
+      }
+    }
+}  

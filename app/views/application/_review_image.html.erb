@@ -1,0 +1,6 @@
+<% if(image_url.blank?) %>
+  <img src="http://fpoimg.com/300x460"
+       alt="Image with gray background">
+<% else %>
+  <%= image_tag(image_url)%>
+<% end %>

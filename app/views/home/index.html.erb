@@ -1,0 +1,29 @@
+<main>
+  <div class="home__container home__wrapper-underlined">
+    <div class="home__wrapper">
+      <div class="hero">
+        <div class="hero__text">
+          <h1 class="masthead__title">Books Review <span>app</span></h1>
+          <h4 class="mb-5 masthead__sub-title">Share opinions of your favorite books.</h4>
+          <p class="text-secondary mb-2">Take a look around.</p>
+          <%= render partial: 'home_search_form' %>
+        </div>
+        <div class="hero__img">
+          <img src="<%= asset_url("looney-44.png") %>" alt="image with a cartoon whit a cellphone">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="home__container">
+    <div class="home__wrapper">
+      <h2 class="section-title text-center">Last Reviews</h2>
+      <ul class="h-bare-list h-grid">
+        <% @reviews.each do |review| %>
+          <li>
+            <%= render(partial: 'review_card', locals: { review: review })%>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</main>

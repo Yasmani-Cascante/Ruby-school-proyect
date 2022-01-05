@@ -1,0 +1,14 @@
+
+.footer {
+	.footer_col {
+		flex: 1 1 300px;
+		.footer-paragraph
+		{
+			width: 300px;
+			margin: 0 auto;
+		}
+	}
+	&__navigation {
+		 display: flex;
+	}
+}

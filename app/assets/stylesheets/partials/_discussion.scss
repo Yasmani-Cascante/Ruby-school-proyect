@@ -1,0 +1,26 @@
+.discussion {
+  max-width: 74rem;
+  margin: 0 auto;
+  .discussion__form {
+    max-width: 650px;
+    padding: 1rem;
+    margin-bottom: 3rem;
+      input,
+      textarea{
+        border-radius: 0;
+        border: 2px solid;
+        &:focus {
+          border: 2px dashed;
+        }
+      }
+    }
+  .discussion_list {
+    // margin: auto;
+    // outline: 1px solid;
+    list-style: none;
+    padding: 0;
+    li {
+      border-bottom: 2px dashed;
+    }
+  }
+}

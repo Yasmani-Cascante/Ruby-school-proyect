@@ -1,0 +1,23 @@
+<%# ------------- Home Card -------------- %>
+<div class="app__card">
+  <%# ----- Card Imagen + Title wrapper ----- %>
+  <div class="app__card__img">   
+   <%= link_to(review_path(review), class: 'h-link-decoration') do %>
+    <%# ----- Book Imagen ----- %>
+      <%= render(partial: 'review_image', locals: { image_url: review.image_url}) %>
+      <div class="app__card-title">
+        <h5 class="card-title"> <%= review.book_title %> </h5>
+      </div>
+    <% end %>
+  </div>
+  <%# ----- Card Body ----- %>
+  <div class="app__card__body">
+   <div class="app__card__subline">
+      <span class="card__subtitle small text-uppercase font-weight-bold">Author:</span>
+      <span class="card__subtitle text-secondary"><%= review.book_author %></span>
+    </div>
+    <div class="app__card__footer">
+      <%= link_to('see review'.html_safe, review_path(review), class:'btn app__btn app__btn-shadow text-uppercase') %>
+    </div>
+  </div>
+</div>

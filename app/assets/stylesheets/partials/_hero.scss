@@ -1,0 +1,34 @@
+.hero {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  &__text {
+    // margin-top: 5rem;
+  }
+  &__img {
+    width: 400px;
+    img {
+        width: 100%;
+    }
+  }
+
+}
+
+@media only screen and (max-width:980px) {
+
+  .hero__text {
+    margin-top: 3rem;
+  }
+}
+
+
+@media only screen and (min-width:980px) {
+
+  .hero {
+    flex-direction: row !important;
+    justify-content: space-around;
+    &__img {
+      width: 700px;
+    }
+  }
+}

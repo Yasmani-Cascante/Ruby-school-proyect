@@ -1,0 +1,49 @@
+.home__baner {
+  border-bottom: 2px solid #000;
+}
+
+.home__container {
+  max-width: 96em;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+  border-left: 2px solid;
+  border-right: 2px solid;
+}
+
+.home__wrapper {
+  position:relative;
+  padding: 5rem 0; 
+  &-underlined {
+    border-bottom: 2px solid;
+  }
+}
+
+.center__wrapper {
+  width: 64em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.home__footer {
+  border-top: 2px solid;
+}
+
+
+.home__header-info {
+    display: flex;
+    .btn {
+      margin-left: auto;
+    }
+  }
+
+
+.see-more {
+  margin: 3rem 2rem 0;
+  border-top: 2px dashed;
+  padding-bottom: 3rem;
+  .home__btn {
+    margin-top: 1rem;
+  }
+}

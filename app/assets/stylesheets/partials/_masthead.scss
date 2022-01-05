@@ -1,0 +1,26 @@
+@import 'partials/variables';
+
+.masthead__title {
+  font-family: "trebuc";
+  font-feature-settings: "ss02";
+  font-weight: bold !important;
+  letter-spacing: 0.03em;
+  text-shadow: 1px 1px rgba(0,0,0,0.3);
+  span {
+  color: $white;
+  text-shadow: 2px 3px rgba(0,0,0,0.7);
+  }
+}
+
+.masthead__sub-title {
+  display: inline-block;
+  padding: 1rem 0;
+}
+
+@media only screen and (max-width:980px) {
+
+  .masthead-section {
+    // padding-top: 3rem;
+    padding-bottom: 15rem;
+  }
+}

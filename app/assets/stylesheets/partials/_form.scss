@@ -1,0 +1,33 @@
+.app__form {
+max-width: 500px;
+border: 2px solid;
+box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+padding: 1rem;
+margin: 5rem auto;
+  input,
+  textarea{
+    border-radius: 0;
+    border: 1px solid;
+    &:focus {
+      border: none;
+          // border: 1px solid $primary;
+      outline: 2px solid;
+    }
+  }
+  .form-control-file {
+    border: none;
+    &:hover,
+    &:focus {
+      border: none;
+    }
+  }
+  .app__btn {
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center;
+    font-size: 1.3rem !important;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+  }
+}
+

@@ -1,0 +1,30 @@
+
+<% if(@review.errors.any?) %>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <%= @review.errors.full_messages.join('<br />') %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+<%= form_for(@review, html: {class: 'app__form '}) do |form|%>
+  <div class="form-group text-left">
+    <%= form.label(:book_title, 'Title')%>
+    <small id="emailHelp" class="text-muted ml-1"> * this field is required</small>
+    <%= form.text_field(:book_title, placeholder: '', class: 'form-control')%>
+  </div>
+  <div class="form-group text-left ">
+    <%= form.label(:book_author, 'Author')%>
+    <small id="emailHelp" class="text-muted ml-1"> * the author of the book</small>
+    <%= form.text_field(:book_author, placeholder: '', class: 'form-control')%>
+  </div>
+  <div class="form-group text-left">
+    <%= form.label(:body, 'Description')%>
+    <%= form.text_area(:body, placeholder: '', class: 'form-control')%>
+  </div>
+  <div class="form-group text-left">
+    <%= form.label(:image_url, 'Image of the book')%>
+    <%= form.text_field(:image_url, class: 'form-control')%>
+  </div>
+    <%= form.submit( class: 'btn app__btn app__btn-blue app__btn-shadow') %>
+<% end %>

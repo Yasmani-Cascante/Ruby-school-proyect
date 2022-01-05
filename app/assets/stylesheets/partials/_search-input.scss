@@ -1,0 +1,48 @@
+@import 'partials/variables';
+
+.input__row {
+    display: flex;
+    max-width: 500px;
+    height: 100%;
+    input {
+      font-size: 0.8em;
+    }
+}
+
+.input__field {
+    background-color: $white;
+    border: 1px solid #000;
+    font-size: inherit;
+    padding: 1em;
+    margin: 0;
+    flex: 1 0 7rem;
+    &:hover,
+    &:focus {
+      border: 2px solid;
+      outline: none;
+    }
+}
+
+.search-btn {
+    background-color: $white !important;
+    color: #192127;
+    font-weight: bold;
+    padding: 1em;
+    margin: 0;
+    border: 1px solid $black;
+    border-left-width: 0;
+    text-decoration: none;
+    height: 100%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    font-size: 1rem !important;
+    }
+    .fillUp {
+      background: -webkit-linear-gradient(transparent 50%,#F52D00D9 50% );
+      background-size: 200px 160px;
+      &:hover {
+        color: $white;
+        background-position: 0px -80px;
+      }
+
+}

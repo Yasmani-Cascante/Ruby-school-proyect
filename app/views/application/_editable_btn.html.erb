@@ -1,0 +1,8 @@
+<%# Partial to show the edit button in the card if the registered user 
+is the owner of the review %>
+
+<% if(session[:user_id] == review.user_id) %>
+    <a href="<%= edit_review_path(review) %>" class="btn app__btn app__btn-blue app__btn-shadow mr-2 text-uppercase">
+        Edit
+    </a>
+<% end %>

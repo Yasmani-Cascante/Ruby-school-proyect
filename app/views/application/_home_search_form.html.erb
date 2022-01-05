@@ -1,0 +1,8 @@
+<%#---------- Home Page Search Form -------------%>
+<%= form_tag(reviews_path, method: 'GET', class: 'nav-search') do %>
+  <div class="input__row">
+    <%= text_field_tag('search', nil, placeholder: 'e.g. J. R. R. Tolkien
+', class: 'input__field' )%>
+    <%= submit_tag('Search', class: 'search-btn fillUp')%>
+  </div>
+<% end %>

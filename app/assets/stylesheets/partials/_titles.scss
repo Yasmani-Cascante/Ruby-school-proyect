@@ -1,0 +1,13 @@
+@import 'partials/variables';
+
+.section-title {
+    color: $black;
+    font-family: "SansSerifShaded";
+    span {
+      transform: rotate(-3deg);
+      display: inline-block;
+      margin-left: 1rem;
+      background: $red;
+    }
+  }
+

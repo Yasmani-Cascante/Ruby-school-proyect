@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BookReviews</title>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="home__baner">
+        <div class="home__container p-0">
+          <nav class="navbar navbar-expand-lg navbar-light justify-content-between p-0 my-nav">
+          
+            <div class="logo"> <%= render partial: 'logo' %> </div>
+
+            <%= render partial: 'nav_search_form' %>
+            
+            <div class="navbar-nav">
+              <%= link_to('Home'.html_safe, root_path, class: "nav-item nav-link text-dark") %>
+              <%= link_to('About', '/about.html', class: "nav-item nav-link text-dark") %>
+              <% if(session[:user_id].present?) %>
+                <%= render partial: 'dropdown_menu' %>
+                <%= link_to('Log out', account_logout_path, class: "nav-item nav-link text-dark")%>
+              <% else %>
+                <%= link_to('Login / register', new_user_path, class: "nav-item nav-link text-dark")%>
+              <% end %>
+            </div>   
+
+          </nav>
+        </div>
+      </div>
+  </header>
+
+  <!-- MAIN -->
+  <%= yield %>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="home__container pt-5 pb-3 h-flex-wrapper">
+      <div class="footer_col"> 
+        <p class="footer-paragraph">
+        Eu excepteur in id cupidatat nisi ad.
+        Et tempor cillum voluptate eu eu in consequat id. 
+        Consequat minim ipsum labore magna labore aliquip 
+        non pariatur non.</p>
+      </div>
+      <div class="logo text-center footer_col"> <%= render partial: 'logo'%>
+        <p class="font-weight-normal">&copy; EPFL 2017</p>
+      </div>
+      <div class="footer_col">
+        <p class="font-weight-bold text-center">Social links</p>
+        <ul class="h-bare-list d-flex justify-content-center">
+          <li>
+           <img src="https://img.icons8.com/office/40/000000/facebook.png"/>
+          </li>
+          <li class="ml-3">
+           <img src="https://img.icons8.com/office/40/000000/instagram-new.png"/>
+          </li>
+          <li class="ml-3">
+            <img src="https://img.icons8.com/office/40/000000/whatsapp--v1.png"/>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>

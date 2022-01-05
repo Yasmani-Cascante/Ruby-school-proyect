@@ -1,0 +1,29 @@
+<%# ------------- Card (My Reviews page) -------------- %>
+<div class="app__card" >
+  <%# ----- Card Imagen + Title wrapper ----- %>
+  <div class="app__card__img">
+    <div class="app__card-title">
+      <h4 class="card-title"> <%= review.book_title %> </h4>
+    </div>
+    <%# ----- Book Imagen ----- %>
+    <%= link_to(review_path(review)) do %>
+      <%= render(partial: 'review_image', locals: { image_url: review.image_url})%>
+    <% end %>
+  </div>
+  <%# ----- Card Body ----- %>
+  <div class="app__card__body">
+    <div class="app__card__subline">
+      <span class="card__subtitle small text-uppercase font-weight-bold">Author:</span>
+      <span class="card__subtitle text-secondary"><%= review.book_author %></span>
+    </div>
+    <%# ----- Card Edit Badge + Button----- %>
+    <%= render(partial: 'editable_rights', locals: { review: review})%>
+    <div class="app__card__footer">
+    <%= render(partial: 'editable_btn', locals: { review: review}) %>
+    <%# ----- Delete Review Option (From Reviews table) ----- %>
+      <%= form_for(review, :method => :delete) do %>
+        <%= submit_tag( 'Delete', class: 'btn app__btn app__btn-red app__btn-shadow text-uppercase')%>
+      <% end %>
+    </div>
+  </div>
+</div>

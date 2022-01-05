@@ -1,0 +1,61 @@
+@import 'partials/variables';
+
+.app__btn {
+  color: $black !important;
+  border-radius: 0 !important;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  border: 2px solid #000 !important;
+  transition: all .15s !important;
+  transition: background .5s !important;
+  font-weight: bold !important;
+  
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    box-shadow: 3px 3px 0px $btn-shadow;
+  }
+  &-blue {
+    background: $blue;
+    color: $white !important;
+  }
+  &-red {
+    background: $red;
+    color: $white !important;
+    opacity: 0.9;
+  }
+  &-white {
+    background: $white;
+    color: $black !important;
+  }
+  &-favorite {
+    background: #dc143c9c;
+    color: #fff !important;
+  }
+  &-black {
+    background: rgba(0,0,0,0.7);
+    color: $white !important;
+  }
+
+  &-shadow {
+      // box-shadow: 3px 3px 0px $btn-shadow;
+      box-shadow: 3px 3px 4px rgba(0,0,0,0.3);
+      &:hover {
+        box-shadow: none;
+      }
+  }
+
+}
+
+.btn-disable {
+  box-shadow: none !important;
+  border: 1px dashed #000 !important;
+
+  &:hover {
+    cursor: initial;
+  }
+}
+

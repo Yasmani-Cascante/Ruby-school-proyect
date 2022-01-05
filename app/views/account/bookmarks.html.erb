@@ -1,0 +1,34 @@
+<main>
+<%# ----------- Users Saved Reviews Page ----------------%>
+  <div class="home__container home__wrapper-underlined">
+    <div class="home__wrapper">
+      <div class="home__header">
+        <div class="home__header-info">
+          <h2 class="text-capitalize section-title">Bookmarked Reviews list</h2>
+          <%= link_to('Create Review', new_review_path ,class: "btn app__btn text-uppercase app__btn-shadow") %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="home__container">
+    <div class="home_wrapper">
+      <% if(@reviews.count > 0) %>
+        <ul class="h-bare-list h-grid">
+          <% @reviews.each do |review| %>
+            <li>
+              <%= render(partial: 'editable_review_card', locals: { review: review })%>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <h3 class="font-weight-bold pt-5 text-center">Your list is empty!</h3>
+        <div class="h-search-img">
+          <img src="<%= asset_url("looney-man-10.png") %>" alt="image with a cartoon whit an spyglass">
+        </div>
+      <% end %>
+      <div class="see-more">
+        <button class="btn home__btn text-center mb-3" data-more="true" disabled>See more</button>
+      </div>
+    </div>
+  </div>
+</main>

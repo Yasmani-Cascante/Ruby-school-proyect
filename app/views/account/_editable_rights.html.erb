@@ -1,0 +1,11 @@
+<%# Partial to show the edit rights in the card if the registered user 
+is the owner of the review %>
+
+<% if(session[:user_id] == review.user_id) %>
+    <div class="app__card__subline mt-3">
+        <span class="card__subtitle small text-uppercase font-weight-bold">Edition Rights:</span>
+        <div class="badge badge-primary text-wrap h-allow-bage" style="width: 5rem;">
+            Owner
+        </div>
+    </div>
+<% end %>

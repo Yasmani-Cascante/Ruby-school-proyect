@@ -1,0 +1,31 @@
+<main>
+  <div class="home__container home__wrapper-underlined">
+    <div class="home__wrapper">
+      <% if(@reviews.any?) %>
+        <h2 class="section-title">Result for! <span class="font-weight-bold">"<%= @search_term %>"</span> </h2>
+      <% else %>
+        <h2 class="section-title">No result for! <span class="font-weight-bold">"<%= @search_term %>"</span> </h2>
+      <% end %>
+    </div>
+  </div>
+  <div class="home__container">
+    <div class="home__wrapper">
+      <% if(@reviews.any?) %>
+        <ul class="h-bare-list h-grid">
+          <% @reviews.each do |review| %>
+            <li>
+              <%= render(partial: 'review_card', locals: { review: review })%>
+            </li>
+          <% end %>
+        </ul>
+        <div class="see-more">
+          <button class="btn home__btn text-center mb-3" data-more="true" disabled>See more</button>
+        </div>
+      <% else %>
+        <div class="hero__img h-centered">
+          <img src="<%= asset_url("looney-meat-revenge.png") %>" alt="">
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>
